@@ -1,135 +1,46 @@
-# {{ cookiecutter.project_name }}
+# Tier 111: One-Time Release
 
-{{ cookiecutter.project_description }}
+## What is a Tier 111 Project?
 
-## About the Project
+A **Tier 1** project refers to an **informational or historical** project that has been **released publicly**. However, it does **not** have planned future updates or maintenance by the original authors or contributors. These projects typically include code samples, prototypes, public documentation, or other types of resources that are made available for use but won't receive ongoing updates or active development.
 
-<!-- This should be a longer-form description of the project. It can include history, background, details, problem statements, links to design documents or other supporting materials, or any other information/context that a user or contributor might be interested in. -->
+The main purpose of a Tier 1 project is to share knowledge and provide information from past work. Though available for public consumption, the project is **not expected to evolve or expand** in the future. Contributors may not engage in continuous development or issue resolution.
 
-**{project statement}**
+> The Tier 1 repository template can be found in [`{{cookiecutter.project_slug}}`](./{{cookiecutter.project_slug}}/) and is offered as a GitHub template repository: https://github.com/DSACMS/tier1
 
-<!--
-### Project Mission
-**{project mission}**
-Provide the core mission and objectives driving this project.-->
+### Key Characteristics of a Tier 1 Project:
 
-<!--
-### Agency Mission
-TODO: Recommended to include since this is an agency-led project
-Provide the mission of the agency and how this project aligns. -->
+- **Publicly released** without planned future development or maintenance.
+- Primarily **informational or historical** in nature.
+- May still provide value to the community, but it is not actively worked on.
 
-<!--
-### Team Mission
-TODO: Recommended to include since this is an agency-led project
-Provide the team's mission and how they work together. -->
+---
 
-## Core Team
+## Files for a Tier 1 Project
 
-A list of core team members responsible for the code and documentation in this repository can be found in [COMMUNITY.md](COMMUNITY.md).
+There are specific files that are required and recommended to include in the repository as part of the CMS Open Source Program Office's repository hygiene guidelines and standards.
 
-<!--
-## Repository Structure
+| **File**          | **Requirement** | **Description**                                                                                                                                          |
+| ----------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `LICENSE`         | Mandatory       | Defines the licensing terms under which the project is distributed.                                                                                      |
+| `code.json`       | Mandatory       | Contains project metadata following government requirements.                                                                                             |
+| `README.md`       | Mandatory       | Provides a comprehensive overview of the project, including its purpose, how to install or use it, and any relevant information for users or developers. |
+| `COMMUNITY.md`    | Mandatory       | Lists project team members and points of contact.                                                                                                        |
+| `SECURITY.md`     | Mandatory       | Outlines the agency's security policies, including how to report security issues or vulnerabilities in the code.                                         |
+| `CONTRIBUTING.md` | Recommended     | Offers guidelines for contributing to the project, including code standards, how to submit issues, and creating pull requests.                           |
 
-TODO: Including the repository structure helps viewers quickly understand the project layout. Using the "tree -d" command can be a helpful way to generate this information, but, be sure to update it as the project evolves and changes over time.
+For more information about required sections and content within the files above, please visit [maturity-model-tiers.md](https://github.com/DSACMS/repo-scaffolder/blob/main/maturity-model-tiers.md).
 
-**{list directories and descriptions}**
+## .github directory
 
-TODO: Add a 'table of contents" for your documentation. Tier 0/1 projects with simple README.md files without many sections may or may not need this, but it is still extremely helpful to provide "bookmark" or "anchor" links to specific sections of your file to be referenced in tickets, docs, or other communication channels.
+The .github directory includes various files such as GitHub action workflows, code.json metadata cookiecutter creation, and issue templates. For more information, please visit the [.github-directory.md]([../docs/.github-directory.md).
 
-**{list of .md at top directory and descriptions}**
+## Repository Hygiene using repolinter
 
--->
+As part of maintaining repository hygiene, repolinter is used to identify missing files and information. `repolinter.json` defines a set of checks that verify the existence of these files in your repository. To run repolinter, execute the following command from the root directory:
 
-<!--
-# Development and Software Delivery Lifecycle
-The following guide is for members of the project team who have access to the repository as well as code contributors. The main difference between internal and external contributions is that external contributors will need to fork the project and will not be able to merge their own pull requests. For more information on contributing, see: [CONTRIBUTING.md](./CONTRIBUTING.md).
--->
+```
+repolinter lint .
+```
 
-<!--
-## Local Development
-
-TODO - with example below:
-This project is monorepo with several apps. Please see the [api](./api/README.md) and [frontend](./frontend/README.md) READMEs for information on spinning up those projects locally. Also see the project [documentation](./documentation) for more info.
--->
-
-<!--
-## Coding Style and Linters
-
-TODO - Add the repo's linting and code style guidelines
-
-Each application has its own linting and testing guidelines. Lint and code tests are run on each commit, so linters and tests should be run locally before committing.
--->
-
-<!--
-## Branching Model
-
-TODO - with example below:
-This project follows [trunk-based development](https://trunkbaseddevelopment.com/), which means:
-
-* Make small changes in [short-lived feature branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/) and merge to `main` frequently.
-* Be open to submitting multiple small pull requests for a single ticket (i.e. reference the same ticket across multiple pull requests).
-* Treat each change you merge to `main` as immediately deployable to production. Do not merge changes that depend on subsequent changes you plan to make, even if you plan to make those changes shortly.
-* Ticket any unfinished or partially finished work.
-* Tests should be written for changes introduced, and adhere to the text percentage threshold determined by the project.
-
-This project uses **continuous deployment** using [Github Actions](https://github.com/features/actions) which is configured in the [./github/workflows](.github/workflows) directory.
-
-Pull-requests are merged to `main` and the changes are immediately deployed to the development environment. Releases are created to push changes to production.
--->
-
-<!--
-## Contributing
-Thank you for considering contributing to an Open Source project of the US Government! For more information about our contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
--->
-
-<!--
-## Community
-The {{ cookiecutter.project_name }} team is taking a community-first and open source approach to the product development of this tool. We believe government software should be made in the open and be built and licensed such that anyone can download the code, run it themselves without paying money to third parties or using proprietary software, and use it as they will.
-
-We know that we can learn from a wide variety of communities, including those who will use or will be impacted by the tool, who are experts in technology, or who have experience with similar technologies deployed in other spaces. We are dedicated to creating forums for continuous conversation and feedback to help shape the design and development of the tool.
-
-We also recognize capacity building as a key part of involving a diverse open source community. We are doing our best to use accessible language, provide technical and process documents, and offer support to community members with a wide variety of backgrounds and skillsets.
--->
-
-<!--
-### Community Guidelines
-Principles and guidelines for participating in our open source community are can be found in [COMMUNITY.md](COMMUNITY.md). Please read them before joining or starting a conversation in this repo or one of the channels listed below. All community members and participants are expected to adhere to the community guidelines and code of conduct when participating in community spaces including: code repositories, communication channels and venues, and events.
--->
-
-<!--
-## Feedback
-If you have ideas for how we can improve or add to our capacity building efforts and methods for welcoming people into our community, please let us know at **{contact email}**. If you would like to comment on the tool itself, please let us know by filing an **issue on our GitHub repository.**
--->
-
-<!--
-## Glossary
-Information about terminology and acronyms used in this documentation may be found in [GLOSSARY.md](GLOSSARY.md).
--->
-
-## Policies
-
-### Open Source Policy
-
-We adhere to the [CMS Open Source
-Policy](https://github.com/CMSGov/cms-open-source-policy). If you have any
-questions, just [shoot us an email](mailto:opensource@cms.hhs.gov).
-
-### Security and Responsible Disclosure Policy
-
-_Submit a vulnerability:_ Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.
-
-For more information about our Security, Vulnerability, and Responsible Disclosure Policies, see [SECURITY.md](SECURITY.md).
-
-### Software Bill of Materials (SBOM)
-
-A Software Bill of Materials (SBOM) is a formal record containing the details and supply chain relationships of various components used in building software.
-
-In the spirit of [Executive Order 14028 - Improving the Nation’s Cyber Security](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028), a SBOM for this repository is provided here: https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}/network/dependencies.
-
-For more information and resources about SBOMs, visit: https://www.cisa.gov/sbom.
-
-## Public domain
-
-This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/) as indicated in [LICENSE](LICENSE).
-
-All contributions to this project will be released under the CC0 dedication. By submitting a pull request or issue, you are agreeing to comply with this waiver of copyright interest.
+A GitHub action is also available for running repolinter checks. For more information, please visit [README.md](https://github.com/DSACMS/repo-scaffolder?tab=readme-ov-file#identify-missing-files-and-information-using-repolinter).
